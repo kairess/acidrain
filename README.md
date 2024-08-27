@@ -1,0 +1,4 @@
+- https://www.youtube.com/watch?v=kjkHmbbSg1o
+- https://geminian.tistory.com/33
+- https://opengameart.org/content/lanapixel-localization-friendly-pixel-font
+- https://www.dafont.com/joystix.font
