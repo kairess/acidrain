@@ -1,5 +1,7 @@
 import arcade
 import random
+import math
+import array, tempfile, os, wave
 
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
@@ -56,8 +58,11 @@ class Game(arcade.Window):
 
         self.word_list = ["헬로월드", "빵형의개발도상국", "구독과좋아요", "파이썬", "아케이드", "게임", "프로그래밍", "타자연습", "재미있다", "산성비"]
 
+        self.correct_sound = arcade.Sound("assets/correct_sound.wav")
+        self.wrong_sound = arcade.Sound("assets/wrong_sound.wav")
+
     def setup(self):
-        arcade.load_font("LanaPixel.ttf")
+        arcade.load_font("assets/LanaPixel.ttf")
         self.score = 0
 
     def add_word(self):
@@ -126,11 +131,13 @@ class Game(arcade.Window):
                 self.confetti.append(Confetti(word.sprite.x, word.sprite.y))
                 self.score += len(word.text)
                 self.input_box = ""
+                self.correct_sound.play()
                 return
         
         # 일치하는 단어가 없으면 화면 흔들기
         self.shake_time = 0.3
         self.input_box = ""
+        self.wrong_sound.play()
 
 
 window = Game()

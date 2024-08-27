@@ -58,7 +58,7 @@ class GameWindow(arcade.Window):
         self.shake_animation_time = 0
         
     def setup(self):
-        arcade.load_font("joystix monospace.otf")
+        arcade.load_font("assets/joystix monospace.otf")
 
         self.laser = arcade.ShapeElementList()
         self.laser.append(arcade.create_line(SCREEN_WIDTH / 5, 0, SCREEN_WIDTH / 5, SCREEN_HEIGHT, arcade.color.FUCHSIA_PINK, 2))
